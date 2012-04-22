@@ -1,0 +1,14 @@
+<h1><%= @exception.title %></h1>
+
+<p>
+Submitted on <%= @exception.date_submitted %>
+<br>By IP <%= @exception.ip %>
+
+<pre><%= @exception.body %></pre>
+
+<% if not @exception.resolved %>
+  <a class="btn btn-success" href="<%= @exception.href %>/resolve">Resolve</a>
+<% else %>
+  <a class="btn btn-warning" href="<%= @exception.href %>/unresolve">Unresolve</a>
+<% end %>
+<a class="btn btn-danger" href="<%= @exception.href %>/delete">Delete</a>

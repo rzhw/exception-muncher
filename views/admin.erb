@@ -1,0 +1,28 @@
+<h1>Exception listing</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Submitted</th>
+      <th>IP</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exceptions.reverse.each do |e| %>
+      <tr>
+        <td><a href="/admin/exception/<%= e.id %>"><%= e.title %></a></td>
+        <td><%= e.date_submitted %></td>
+        <td><%= e.ip %></td>
+        <td>
+          <% if not e.resolved %>
+            <a class="btn btn-mini btn-success" href="<%= e.href %>/resolve">Resolve</a>
+          <% else %>
+            <a class="btn btn-mini btn-warning" href="<%= e.href %>/unresolve">Unresolve</a>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

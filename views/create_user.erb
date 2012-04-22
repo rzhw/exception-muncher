@@ -1,0 +1,14 @@
+<h2>Create user</h2>
+<%= @user.errors.to_s if !@user.errors.nil? %>
+<form method="post" action="/admin/create_user">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" value="<%= @user.username %>">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" value="<%= @user.email %>">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <input type="submit" value="Create">
+</form>
