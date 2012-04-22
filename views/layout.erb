@@ -18,9 +18,9 @@
         <a class="brand" href="/admin">Exception Muncher Admin</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><a href="/admin">Unresolved</a>
-            <li><a href="/admin?resolved=true">Resolved</a>
             <% if logged_in? %>
+              <li><a href="/admin">Unresolved</a>
+              <li><a href="/admin?resolved=true">Resolved</a>
               <li><a href="/admin/logout">Logout</a>
             <% end %>
           </ul>
